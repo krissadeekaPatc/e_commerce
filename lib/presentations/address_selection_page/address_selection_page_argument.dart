@@ -1,7 +1,7 @@
 class AddressSelectionPageArgument {
   AddressSelectionPageArgument({
-    required this.totalAmount,
-    required this.totalPrice,
+    this.totalAmount = 0,
+    this.totalPrice = 0,
   });
 
   int totalAmount;

@@ -143,7 +143,8 @@ class HomePage extends StatelessWidget {
                       itemBuilder: (c, i) {
                         final cat = data.category[i];
                         return InkWell(
-                          key: Key(HomePageConstantKey.filterButtonKey),
+                          key: Key(HomePageConstantKey.filterButtonKey +
+                              i.toString()),
                           onTap: () {
                             data.setValue(i);
                             data.filterList(data.category[data.selectedIndex]);
