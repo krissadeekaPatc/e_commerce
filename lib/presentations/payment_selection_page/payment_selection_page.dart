@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/common_widgets/common_box_data.dart';
 import 'package:e_commerce_app/common_widgets/custom_button.dart';
 import 'package:e_commerce_app/constant_key/payment_selection_page.dart';
+import 'package:e_commerce_app/data/model/address_model.dart';
 import 'package:e_commerce_app/data/model/payment_model.dart';
 import 'package:e_commerce_app/presentations/check_out/check_out_page_argument.dart';
 import 'package:e_commerce_app/presentations/input_payment_menthod_page/input_payment_page_argument.dart';
@@ -16,7 +17,7 @@ class PaymentSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments
-        as PaymentSelectionPageArgument;
+        as PaymentSelectionPageArgument?;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -143,9 +144,9 @@ class PaymentSelectionPage extends StatelessWidget {
                       context,
                       '/check_out_page',
                       arguments: CheckOutPageArgument(
-                        totalAmount: args.totalAmount,
-                        totalPrice: args.totalPrice,
-                        addressData: args.addressData,
+                        totalAmount: args?.totalAmount ?? 0,
+                        totalPrice: args?.totalPrice ?? 0,
+                        addressData: args?.addressData ?? AddressModel(),
                         paymentData: provider.paymentData[provider.index],
                       ),
                     );
