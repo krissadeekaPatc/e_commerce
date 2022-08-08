@@ -19,7 +19,7 @@ class AddressSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments
-        as AddressSelectionPageArgument;
+        as AddressSelectionPageArgument?;
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
@@ -137,8 +137,8 @@ class AddressSelectionPage extends StatelessWidget {
                       context,
                       '/payment_page',
                       arguments: PaymentSelectionPageArgument(
-                        totalAmount: args.totalAmount,
-                        totalPrice: args.totalPrice,
+                        totalAmount: args?.totalAmount ?? 0,
+                        totalPrice: args?.totalPrice ?? 0,
                         addressData: provider.addressData[provider.index],
                       ),
                     );

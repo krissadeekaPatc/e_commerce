@@ -4,6 +4,8 @@ import 'package:e_commerce_app/presentations/home_page/home_page_argument.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant_key/complete_page.dart';
+
 class CompletePage extends StatelessWidget {
   const CompletePage({Key? key}) : super(key: key);
 
@@ -21,7 +23,8 @@ class CompletePage extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.08,
                 ),
-                const Icon(
+                Icon(
+                  key: Key(CompletePageConstantKey.iconKey),
                   Icons.check_circle_outlined,
                   size: 90,
                   color: Colors.white,
@@ -29,16 +32,19 @@ class CompletePage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
+                Text(
+                  key: Key(CompletePageConstantKey.titleKey),
                   "Order Complete",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 40,
                     color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 160),
                 CustomButton(
-                  key: Key("ABC"),
+                  key: Key(
+                    CompletePageConstantKey.homePageButtonKey,
+                  ),
                   onPressed: () async {
                     print("Tapped");
                     await provider.clearCart();

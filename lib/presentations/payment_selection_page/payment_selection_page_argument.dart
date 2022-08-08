@@ -2,12 +2,12 @@ import 'package:e_commerce_app/data/model/address_model.dart';
 
 class PaymentSelectionPageArgument {
   PaymentSelectionPageArgument({
-    required this.totalAmount,
-    required this.totalPrice,
-    required this.addressData,
+    this.totalAmount = 0,
+    this.totalPrice = 0,
+    this.addressData,
   });
 
   int totalAmount;
   int totalPrice;
-  AddressModel addressData;
+  AddressModel? addressData;
 }

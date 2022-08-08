@@ -14,7 +14,7 @@ class HomePageProvider with ChangeNotifier {
   List mockUpData = [];
   int selectedIndex = 0;
 
-  List category = ["ALL", "T-SHIRT", "PANTS", "JEANS", "SNEAKER"];
+  List category = ["ALL", "T-SHIRT", "PANTS", "JEANS", "GLOVES", "SNEAKER"];
   mockingUpData() {
     Random random = Random();
 
